@@ -1,0 +1,146 @@
+<!-- This App Create by Majid Zare -->
+<!doctype html>
+<html ng-app="TacozApp" ng-controller="MenuCtrl">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700italic|Oswald' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"/>
+    <link href="assets/css/main.css" rel="stylesheet" />
+    <script src="assets/js/angular.min.js"></script>
+    <script src="assets/js/angular-animate.min.js"></script>
+  </head>
+  <body background="url(assets/images/menu-bg.png)">
+    <div class="header">
+      <h1><span><img src="assets/images/tacoz-logo.png"></span><span>Tacoz</span></h1>
+    </div>
+
+    <div class="main">
+      <div class="container">
+        <h1>Specials for {{ today | date }}</h1>
+        
+        <h2>Tacos</h2>
+        <div class="tacos row item-row" ng-repeat="taco in tacos">
+          <div class="item col-xs-9">
+            <div class="media">
+              <div class="media-left media-top">
+                <img ng-src="{{taco.image}}" class="media-object item-img thumbnail">
+              </div>
+              <div class="media-body">
+                <h3 class="media-heading">{{ taco.name }}</h3>
+                <p>{{ taco.description }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="price col-xs-3">
+            <p class="price"> <a type="button" class="btn btn-md price-btn" data-ng-click="AddToOrder(taco,1)">{{ taco.price | currency }}</a> </p>
+          </div>
+        </div>
+
+        <h2>Burritos</h2>
+        <div class="burritos row item-row" ng-repeat="burrito in burritos">
+          <div class="item col-xs-9">
+            <div class="media">
+              <div class="media-left media-top">
+                <img ng-src="{{burrito.image}}" class="media-object item-img thumbnail">
+              </div>
+              <div class="media-body">
+                <h3 class="media-heading">{{ burrito.name }}</h3>
+                <p>{{ burrito.description }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="price col-xs-3">
+            <p class="price"> <a type="button" class="btn btn-md price-btn" data-ng-click="AddToOrder(burrito,1)">{{ burrito.price | currency }}</a> </p>
+          </div>
+        </div>
+
+        <h2>Beverages</h2>
+        <div class="beverages row item-row" ng-repeat="beverage in beverages">
+          <div class="item col-xs-9">
+            <div class="media">
+              <div class="media-left media-top">
+                <img ng-src="{{beverage.image}}" class="media-object item-img thumbnail">
+              </div>
+              <div class="media-body">
+                <h3 class="media-heading">{{ beverage.name }}</h3>
+                <p>{{ beverage.description }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="price col-xs-3">
+            <p class="price"> <a type="button" class="btn btn-md price-btn" data-ng-click="AddToOrder(beverage,1)">{{ beverage.price | currency }}</a> </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="footer-order" ng-hide="footerOrderSlide">
+      <a type="button" class="btn btn-md footer-order-btn" data-toggle="modal" data-target="#order-modal"><i class="fas fa-shopping-cart"></i></a>
+
+      <p class="total-price">Total: <strong>{{GetTotal() | currency:"USD $ "}}</strong></p>
+      <a type="button" class="btn btn-md footer-clear-btn" ng-click="FooterOrderSlide()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="footer">
+    </div>
+
+  <!-- Modal -->
+  <div id="order-modal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content order-modal-content">
+        <div class="modal-header order-modal-header">
+          <button type="button" class="close order-modal-close-btn" data-dismiss="modal"><i class="fas fa-times"></i></button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body order-modal-body">
+          <table class="table table-striped order-modal-table">
+            <!-- <thead>
+              <th>Qty</th>
+              <th>Name</th>
+              <th>QtyPrice</th>
+              <th>Price</th>
+              <th>Add/Remove</th>
+              <th>Remo</th>
+            </thead> -->
+            <tbody>
+              <tr ng-repeat="item in order">
+                <td class="text-center"><span class="badge modal-order-badge" ng-bind="item.qty"></span></td>
+                <td><strong>{{item.name}}</strong></td>
+                <td>{{item.price * item.qty | currency:"USD $ "}}</td>
+                <td>{{item.price | currency:"USD $ "}}</td>
+                <td>
+                   <div class="btn-group">
+                    <button type="button" class="btn modal-order-plus-btn" ng-click="AddToOrder(item,1)"><i class="fas fa-plus"></i></button>
+                    <button type="button" class="btn modal-order-minus-btn" ng-click="RemoveOneEntity(item)"><i class="fas fa-minus"></i></button>
+                  </div> 
+                </td>
+                <td>
+                  <a type="button" class="btn btn-md modal-order-remove-btn" ng-click="RemoveItem(item)"><i class="fas fa-times"></i></a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer order-modal-footer">
+          <p class="total-price">Total: <strong>{{GetTotal() | currency:"USD $ "}}</strong></p>
+          <a type="button" class="btn btn-md order-modal-checkout-btn" ng-click="Checkout()">CHECKOUT</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+    
+    <!-- Modules -->
+    <script src="assets/js/app.js"></script>
+
+    <!-- Controllers -->
+    <script src="assets/js/controllers.js"></script>
+  </body>
+</html>

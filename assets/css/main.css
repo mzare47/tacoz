@@ -1,0 +1,360 @@
+html {
+    background: url(../images/menu-bg.png);
+    /*background-size: 110px 69px;*/
+    font-family: 'Playfair Display', serif;
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    /*background-position: center;*/
+    background-repeat: all;
+    background-size: cover;
+}
+
+body{
+    background: transparent;
+    font-family: 'Playfair Display', serif;
+}
+
+body p {
+    font-style: italic;
+    font-size: 16px;
+}
+
+.header h1 {
+    background: #ce2c38;
+    border-radius: 100%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.25);
+    height: 140px;
+    margin: 60px auto 0;
+    position: relative;
+    text-align: center;
+    width: 140px;
+    z-index: 10;
+    
+}
+
+.header h1 span {
+    color:#fff;
+    display: block;
+    font-size: 40px;
+    padding: 15px 0 0 0;
+}
+
+.header h1 span img {
+    width: 86px;
+}
+
+.header h1 span+span {
+    color:#fff;
+    display: block;
+    font-size: 34px;
+    padding: 0;
+}
+
+.main .container {
+    background: rgb(255,255,255,1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    margin: -70px auto 80px;
+    padding: 80px;
+    z-index: 0;
+}
+
+h1 {
+    color: #444;
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    margin: 20px 0 0 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+h2 {
+    border-bottom: 1px solid #444;
+    color: #000;
+    font-family: 'Oswald', sans-serif;
+    margin: 20px 0 10px;
+    padding: 0 0 10px 0;
+    text-transform: uppercase;
+}
+
+h3 {
+    color: #ce2c38;
+    font-family: 'Oswald', sans-serif;
+    margin: 10px 0 5px;
+    text-transform: uppercase;
+}
+
+.price p {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    /*margin: 10px 0 5px;*/
+    text-align: right;
+}
+
+div.item-row {
+    margin: 10px 0;
+}
+
+.price-btn {
+    background: #ce2c38;
+    border-color: #ce2c38;
+    border-radius: 0px;
+    font-size: 20px;
+    color: white;
+}
+
+a.price-btn:hover,
+a.price-btn:active,
+a.price-btn:visited,
+a.price-btn:link
+ {
+    background: #a6202a;
+    border-color: #a6202a;
+    color: white;
+}
+
+.item-img {
+    width: 128px;
+}
+
+.footer-order{
+    /*transition: all linear 0.5s;*/
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    /*height: 10%;*/
+    background-color: #ce2c38;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    /*top: 82%;*/
+}
+
+.footer-order-btn{
+    position: relative;
+    background: #009964;
+    border-radius: 100%;
+    height: 60px;
+    width: 60px;
+    z-index: 10;
+    margin-top: -50px;
+    border-color: #009964;
+    text-align: center;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none
+}
+
+a.footer-order-btn:hover,
+a.footer-order-btn:active,
+a.footer-order-btn:visited,
+a.footer-order-btn:link
+ {
+    background: #028054;
+    border-color: #028054;
+    color: white;
+}
+
+.footer-clear-btn {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: white;
+    font-size: 30px;
+}
+
+a.footer-clear-btn:hover,
+a.footer-clear-btn:active,
+a.footer-clear-btn:visited,
+a.footer-clear-btn:link
+ {
+    /*background: #d2d2d2;
+    border-color: #d2d2d2;*/
+    color: #d2d2d2;
+}
+
+.total-price {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+}
+
+.order-modal-content{
+    border-radius: 0px;
+}
+
+.order-modal-header{
+    font-family: 'Oswald', sans-serif;
+    border-bottom: 0px;
+    background-color: #ce2c38;
+    color: white;
+}
+
+.order-modal-body{
+    font-family: 'Oswald', sans-serif;
+    padding: 0;
+}
+
+.order-modal-footer{
+    font-family: 'Oswald', sans-serif;
+    border-top: 0px;
+    background-color: #e9e9e9;
+    color: #ce2c38;
+    text-align: center;
+}
+
+.order-modal-close-btn{
+    color: white;
+    opacity: 1;
+    text-shadow: 0 0px 0;
+}
+
+button.order-modal-close-btn:hover,
+button.order-modal-close-btn:active,
+button.order-modal-close-btn:visited,
+button.order-modal-close-btn:link
+{
+    /*background: #d2d2d2;
+    border-color: #d2d2d2;*/
+    opacity: 1;
+    color: #d2d2d2;
+    text-shadow: 0 0px 0;
+}
+
+.order-modal-checkout-btn{
+    background: #009964;
+    border-color: #009964;
+    border-radius: 0px;
+    font-size: 20px;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+}
+
+a.order-modal-checkout-btn:hover,
+a.order-modal-checkout-btn:active,
+a.order-modal-checkout-btn:visited,
+a.order-modal-checkout-btn:link
+{
+    background: #028054;
+    border-color: #028054;
+    color: white;
+}
+
+.order-modal-clear-btn{
+    color: white;
+    opacity: 1;
+    text-shadow: 0 0px 0;
+}
+
+.order-modal-table{
+    margin: 0;
+}
+
+.order-modal-table tbody tr td{
+    vertical-align: middle;
+}
+
+.modal-order-remove-btn{
+    color: #ce2c38;
+}
+
+a.modal-order-remove-btn:hover,
+a.modal-order-remove-btn:active,
+a.modal-order-remove-btn:visited,
+a.modal-order-remove-btn:link
+{
+    color: #a6202a;
+}
+
+button.modal-order-plus-btn{
+    background: #009964;
+    border-color: #009964;
+    border-radius: 0px;
+    color: white;
+}
+
+button.modal-order-plus-btn:hover,
+button.modal-order-plus-btn:active,
+button.modal-order-plus-btn:visited,
+button.modal-order-plus-btn:link
+{
+    background: #028054;
+    border-color: #028054;
+    color: white;
+}
+
+button.modal-order-minus-btn{
+    background: #faaf40;
+    border-color: #faaf40;
+    border-radius: 0px;
+    color: white;
+}
+
+button.modal-order-minus-btn:hover,
+button.modal-order-minus-btn:active,
+button.modal-order-minus-btn:visited,
+button.modal-order-minus-btn:link
+{
+    background: #d79739;
+    border-color: #d79739;
+    color: white;
+}
+
+.modal-order-badge{
+    background-color: #ce2c38;
+    border-radius: 0px;
+}
+
+.slide.ng-enter {
+  transition:0.5s linear all;
+  transform:translateY(-100px);
+}
+.slide.ng-enter.ng-enter-active {
+  transform:translateY(0);
+}
+
+/*.footer-order.slide-down {
+  -webkit-animation:0.5s slide-down normal forwards;
+  animation:0.5s slide-down normal forwards;
+}
+
+.footer-order.slide-up {
+  -webkit-animation:0.5s slide-up normal forwards;
+  animation:0.5s slide-up normal forwards;
+}*/
+
+/* Chrome, Safari, Opera */
+/*@-webkit-keyframes slide-up
+{
+  0%   {top:120%;}
+  100%  {top:82%;}
+}*/
+
+/* Standard syntax */
+/*@keyframes slide-up
+{
+  0%   {top:120%;}
+  100%  {top:82%;}
+}*/
+
+/* Chrome, Safari, Opera */
+/*@-webkit-keyframes slide-down
+{
+  0%  {top:82%;}
+  100%   {top:120%;}
+}*/
+
+/* Standard syntax */
+/*@keyframes slide-down
+{
+  0%  {top:82%;}
+  100%   {top:120%%;}
+}*/
+
