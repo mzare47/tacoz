@@ -197,7 +197,7 @@ app.controller('MenuCtrl', ['$scope', function($scope) {
   };
 
   $scope.Checkout = function (index) {
-      alert("Order Number: " + ($scope.totalOrders+1) + "\n\nOrder amount: $" + $scope.GetTotal().toFixed(2) + "\n\nPayment received. Thanks.");
+      alert("Order Number: " + ($scope.totalOrders+1) + "\n\nOrder amount: $" + $scope.GetTotal().toFixed(2) + "\n\nPayment received. Thanks a lot.");
       $scope.order = [];
       $scope.totalOrders += 1;
       $scope.ClearOrder();
