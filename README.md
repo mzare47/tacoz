@@ -6,3 +6,5 @@ Tacoz is an online store. It is a single page Angularjs project. I developted it
 ![Video link](https://www.aparat.com/v/biF3k)
 #####
 ![ScreenShot](https://github.com/mzare47/tacoz/blob/master/assets/images/Screenshot.png)
+#####
+[![IMAGE ALT TEXT HERE](https://github.com/mzare47/tacoz/blob/master/assets/images/Screenshot.png)](https://www.aparat.com/v/biF3k)
